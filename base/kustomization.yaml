@@ -12,9 +12,6 @@ bases:
 resources:
   - namespace.yaml
 
-patches:
-  - path: configmap.yaml
-
 images:
   # Override the Vector image to pin the version used.
   - name: timberio/vector

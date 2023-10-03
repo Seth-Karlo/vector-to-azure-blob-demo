@@ -54,3 +54,17 @@ kubectl apply -k .
 oc create -f cluster-log-forwarder.yaml
 oc create -f cluster-logging.yaml
 ```
+
+# Forward logs to AWS s3
+
+## Install ACK s3 controller for ROSA
+
+Follow instructions here: https://cloud.redhat.com/experts/rosa/ack/
+
+## Create your bucket
+
+oc apply -f overlays/aws-s3/bucket.yaml
+
+## Install vector
+
+oc apply -k overlays/aws-s3

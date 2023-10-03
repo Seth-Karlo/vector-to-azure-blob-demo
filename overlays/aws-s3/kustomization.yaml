@@ -1,0 +1,13 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Override the namespace of all of the resources we manage.
+namespace: vector
+
+bases:
+  - ../../base/
+
+patches:
+  - path: configmap.yaml
+  - path: env.yaml
